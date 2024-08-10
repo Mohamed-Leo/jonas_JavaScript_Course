@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", system-ui;
+  font-style: normal;
+  color: #fff;
+  background-color: #222;
+  text-transform: capitalize;
+}
+
+button {
+  font-family: "Press Start 2P", system-ui;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.4s;
+  background-color: #fff;
+  border: none;
+  padding: 1rem;
+}
+button:hover {
+  opacity: 1;
+}
+
+header {
+  margin-bottom: 5rem;
+}
+header .again-between-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+header h1 {
+  text-align: center;
+  margin: 2rem 0;
+  line-height: 2;
+  padding: 0 1.5rem;
+}
+header .number {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+header .number span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1rem 2rem;
+  margin: auto;
+  height: 80px;
+  font-size: 40px;
+}
+header .number .line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  z-index: -1;
+}
+
+main {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+main .sec-left input {
+  font-family: "Press Start 2P", system-ui;
+  width: 180px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 30px;
+  padding: 1rem;
+  text-align: center;
+  border: 3px solid #fff;
+  outline: none;
+}
+main .sec-left button {
+  display: block;
+  width: 105px;
+  margin: 20px auto 0;
+}
+main .sec-right .message {
+  margin-bottom: 3rem;
+}
+main .sec-right .label-score {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 500px) {
+  header {
+    margin-bottom: 1rem;
+  }
+  header .again-between-box {
+    justify-content: center;
+    gap: 40px;
+  }
+  main {
+    gap: 50px;
+  }
+}/*# sourceMappingURL=style.css.map */
