@@ -5,22 +5,21 @@ const againBtn = document.getElementById('again'),
 checkBtn = document.getElementById('check'),
 guessInput = document.querySelector('.guess'),
 message = document.querySelector('.message'),
-score = document.querySelector('.score'),
-highscore = document.querySelector('.highscore'),
+scoreSpan = document.querySelector('.score'),
+highscoreSpan = document.querySelector('.highscore'),
 unknownIcon = document.querySelector('.unknownIcon');
 
 
 
-
-// numberArray-------
-const numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-
-// randomNumber---
-let randomNumber;
-
 // get random number -----------
-const getRandomNumber = () => randomNumber = numberArray[Math.floor(Math.random() * numberArray.length)];
+let randomNumber;
+const getRandomNumber = () => randomNumber = Math.trunc(Math.random() * 20) + 1;
 getRandomNumber();
+
+
+
+// score and highScore---
+let score = 20, highScore = 0;
 
 
 // check -----
@@ -38,40 +37,59 @@ checkBtn.addEventListener('click' , _ => {
 function checkGuessedNumber(guessedNumber) {
     // check if the value is the same with randomNumber-
     if(guessedNumber === randomNumber) correctGuess();
-    else if (guessedNumber > 20 || guessedNumber < 1) wrongGuess("outRange")
-    else if(guessedNumber > randomNumber) wrongGuess("bigger")
+    else if (guessedNumber > 20 || guessedNumber < 1) wrongGuess("outRange");
+    else if(guessedNumber > randomNumber) wrongGuess("bigger");
     else wrongGuess("smaller");
 }
 
 
 
 function correctGuess() {
-    message.textContent = '🎉 Correct Number';
-    // change the body backgroundColor
-    document.body.style.backgroundColor = "#4cd137";
-    // increase the highscore--
-    highscore.textContent = Number(highscore.textContent) + randomNumber;
-    // change the unknownIcon textContent--
-    unknownIcon.textContent = randomNumber;
+    // check first if the score > highScore
+    if(score > highScore) {
+        highScore = score
+        highscoreSpan.textContent = highScore;
+        message.textContent = '🎉 Correct Number';
+        // change the body backgroundColor
+        document.body.style.backgroundColor = "#4cd137";
+        // change the unknownIcon textContent--
+        unknownIcon.textContent = randomNumber;
+    }
+    else {
+        message.textContent = '🎉 Correct Number';
+        // change the body backgroundColor
+        document.body.style.backgroundColor = "#4cd137";
+        // change the unknownIcon textContent--
+        unknownIcon.textContent = randomNumber;
+    }
 }
 
 
 
 function wrongGuess(errorMessage) {
+    // check first if the score is 0 
+    if(!score) {
+        message.textContent = '💥 You lost the game';
+        // change the body backgroundColor
+        document.body.style.backgroundColor = "##c0392b";
+        return;
+    }
+
+
+    // decrease the score by one
+    score--;
+
     if(errorMessage === "bigger") {
         message.textContent = '📉 Too high';
-        // decrease the score by one
-        score.textContent = parseInt(score.textContent) - 1;
+        scoreSpan.textContent = score;
     }
     else if (errorMessage === "smaller") {
         message.textContent = '📈 Too low';
-        // decrease the score by one
-        score.textContent = parseInt(score.textContent) - 1;
+        scoreSpan.textContent = score;
     }
     else {
         message.textContent = '🚫 Out of range';
-        // decrease the score by one
-        score.textContent = parseInt(score.textContent) - 1;
+        scoreSpan.textContent = score;
     }
 }
 
@@ -94,8 +112,9 @@ function playAgain() {
     message.textContent = 'start guessing...';
     // change the unknownIcon textContent--
     unknownIcon.textContent = '?';
-    // change the score textContent--
-    score.textContent = 20;
+    // reset score and change the score textContent--
+    score = 20;
+    scoreSpan.textContent = score;
     // change the highscore textContent--
-    highscore.textContent = 0;
+    highscoreSpan.textContent = highScore;
 }
