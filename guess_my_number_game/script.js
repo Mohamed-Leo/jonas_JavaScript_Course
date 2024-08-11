@@ -37,9 +37,9 @@ checkBtn.addEventListener('click' , _ => {
 function checkGuessedNumber(guessedNumber) {
     // check if the value is the same with randomNumber-
     if(guessedNumber === randomNumber) correctGuess();
-    else if (guessedNumber > 20 || guessedNumber < 1) wrongGuess("outRange");
-    else if(guessedNumber > randomNumber) wrongGuess("bigger");
-    else wrongGuess("smaller");
+    else if(guessedNumber > 20 || guessedNumber < 1) wrongGuess('🚫 Out of range');
+    else if(guessedNumber > randomNumber) wrongGuess('📉 Too high');
+    else wrongGuess('📈 Too low');
 }
 
 
@@ -79,18 +79,9 @@ function wrongGuess(errorMessage) {
     // decrease the score by one
     score--;
 
-    if(errorMessage === "bigger") {
-        message.textContent = '📉 Too high';
-        scoreSpan.textContent = score;
-    }
-    else if (errorMessage === "smaller") {
-        message.textContent = '📈 Too low';
-        scoreSpan.textContent = score;
-    }
-    else {
-        message.textContent = '🚫 Out of range';
-        scoreSpan.textContent = score;
-    }
+    // change the message-----
+    message.textContent = errorMessage;
+    scoreSpan.textContent = score;
 }
 
 
