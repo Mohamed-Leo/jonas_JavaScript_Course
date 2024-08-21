@@ -39,6 +39,7 @@ This repository includes all the exercises, projects, and code snippets I have w
 This repository includes the following projects:
 
 1. **Guess My Number:** A simple number-guessing game with basic DOM manipulation.[Guess My Number](https://mohamed-leo.github.io/jonas_JavaScript_Course/guess_my_number_game)
+2. **Modal Window:** A project demonstrating modal window functionality with event handling.
 
 
 ## Installation
