@@ -24,8 +24,21 @@ openModelBtns.forEach(btn => {
 });
 
 
-close.addEventListener("click" , _ => {
+
+// close the model with overlay----
+const hideModel = () => {
     // removing .show-popup from overlay and model--
     overlay.classList.remove("show-popup");
     model.classList.remove("show-popup");
+}
+
+// when click on the close icon
+close.addEventListener("click" , _ => hideModel());
+// when click out side model
+overlay.addEventListener("click" , () => hideModel());
+
+
+// when click on esc key---
+document.addEventListener("keydown" , event => {
+    if (event.key === "Escape") hideModel();
 });
