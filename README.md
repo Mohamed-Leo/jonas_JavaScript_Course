@@ -9,29 +9,36 @@ This repository includes all the exercises, projects, and code snippets I have w
 ## Content Overview
 
 ### JavaScript Basics
+
 - Variables and Data Types
 - Operators and Expressions
 - Control Structures
 
 ### Functions and Arrays
+
 - Function Declarations and Expressions
 - Array Methods and Iteration
 
 ### Objects and Prototypes
+
 - Object Literals and Constructors
 - Prototypal Inheritance
 
 ### DOM Manipulation
+
 - Selecting and Modifying DOM Elements
 - Event Handling
 
 ### Asynchronous JavaScript
+
 - Callbacks, Promises, and Async/Await
 
 ### ES6+ Features
+
 - Arrow Functions, Destructuring, and Modules
 
 ### Advanced Concepts
+
 - Closures, Hoisting, and the Event Loop
 
 ## Projects
@@ -40,7 +47,7 @@ This repository includes the following projects:
 
 1. **Guess My Number:** A simple number-guessing game with basic DOM manipulation.[Guess My Number](https://mohamed-leo.github.io/jonas_JavaScript_Course/guess_my_number_game)
 2. **Modal Window:** A project demonstrating modal window functionality with event handling.
-
+3. **[Pig Game](https://mohamed-leo.github.io/jonas_JavaScript_Course/pig_game):** A dice game implementing more complex logic and DOM updates.
 
 ## Installation
 
