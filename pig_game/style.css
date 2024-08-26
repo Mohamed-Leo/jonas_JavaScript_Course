@@ -29,7 +29,7 @@ body {
     position: relative;
 }
 
-.container .player-box ,  .container .player-box{
+.container .player-box {
     flex-basis: 50%;
     text-align: center;
     padding: 4rem;
@@ -41,6 +41,11 @@ body {
 .player-box.active {
     background-color: rgb(230, 116, 133);
     opacity: 1;
+}
+
+.player-box.winner {
+    background-color: #333;
+    color: #fff;
 }
 
 .container h2 {
@@ -130,6 +135,11 @@ body {
     display: none;
 }
 
+
+.container .dice-image.show-dice-image {
+    display: block;
+}
+
 .container .dice-image img {
     max-width: 100%;
     max-height: 100%;
@@ -138,4 +148,43 @@ body {
 
 .container .dice-image.show-dice {
     display: block;
+}
+
+
+
+@media(max-width : 870px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+        margin: 1rem;
+    }
+
+    .container .player-box {
+        width: 100%;
+    }
+
+    .container .btns-box {
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        justify-content: center;
+        left: 0;
+        padding: 0;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .container .btns-box .bottom-btns-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .container .btns-box .bottom-btns-box button:nth-child(1),
+    .container .btns-box button {
+        margin: 0;
+    }
 }
